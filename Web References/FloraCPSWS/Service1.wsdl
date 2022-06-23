@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsAddressAvaiable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAddressAvaiableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsAddressAvaiableResult" type="tns:ConnectionResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConnectionResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Connected" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InwardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benefAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CCY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="insDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remBranch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InwardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InwardTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORETransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasoncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORETransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORETransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutwardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benefAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CCY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="insDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remBranch" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutwardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OutwardTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IRETransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasoncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IRETransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IRETransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsAddressAvaiableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAddressAvaiable" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAddressAvaiableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryTransaction" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:InwardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:InwardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ORETransaction" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ORETransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:OutwardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:OutwardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:IRETransaction" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:IRETransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="IsAddressAvaiable">
+      <wsdl:input message="tns:IsAddressAvaiableSoapIn" />
+      <wsdl:output message="tns:IsAddressAvaiableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <wsdl:input message="tns:QueryTransactionSoapIn" />
+      <wsdl:output message="tns:QueryTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <wsdl:input message="tns:InwardTransactionSoapIn" />
+      <wsdl:output message="tns:InwardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <wsdl:input message="tns:ORETransactionSoapIn" />
+      <wsdl:output message="tns:ORETransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <wsdl:input message="tns:OutwardTransactionSoapIn" />
+      <wsdl:output message="tns:OutwardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <wsdl:input message="tns:IRETransactionSoapIn" />
+      <wsdl:output message="tns:IRETransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <soap:operation soapAction="http://tempuri.org/IsAddressAvaiable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <soap:operation soapAction="http://tempuri.org/QueryTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <soap:operation soapAction="http://tempuri.org/InwardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <soap:operation soapAction="http://tempuri.org/ORETransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <soap:operation soapAction="http://tempuri.org/OutwardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <soap:operation soapAction="http://tempuri.org/IRETransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <soap12:operation soapAction="http://tempuri.org/IsAddressAvaiable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <soap12:operation soapAction="http://tempuri.org/QueryTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <soap12:operation soapAction="http://tempuri.org/InwardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <soap12:operation soapAction="http://tempuri.org/ORETransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <soap12:operation soapAction="http://tempuri.org/OutwardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <soap12:operation soapAction="http://tempuri.org/IRETransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

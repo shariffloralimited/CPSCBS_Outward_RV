@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsAddressAvaiable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="serviceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAddressAvaiableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsAddressAvaiableResult" type="tns:ConnectionResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConnectionResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Connected" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoForCPS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoForCPSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoForCPSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountSignatories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountSignatoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountSignatoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSigImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSigImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InwardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benefAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CCY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="insDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="instrType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasoncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="envelop" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InwardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InwardTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORETransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasoncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORETransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORETransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutwardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BenefAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CCY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TxnDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InstDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TxnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemBranch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InstType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReasonCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RejectReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Envelop" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OutwardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OutwardTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IRETransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XREF" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txnBrn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="checkSlNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reasoncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rejectReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IRETransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IRETransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConnectionResult" nillable="true" type="tns:ConnectionResult" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsAddressAvaiableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAddressAvaiable" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAddressAvaiableResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryTransaction" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoForCPS" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoForCPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountSignatories" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountSignatoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSigImage" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSigImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:InwardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:InwardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ORETransaction" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ORETransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:OutwardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:OutwardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:IRETransaction" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:IRETransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableHttpGetIn">
+    <wsdl:part name="serviceName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableHttpGetOut">
+    <wsdl:part name="Body" element="tns:ConnectionResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionHttpGetIn">
+    <wsdl:part name="XREF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSHttpGetIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesHttpGetIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageHttpGetIn">
+    <wsdl:part name="imgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionHttpGetIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="HV" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="benefAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="CCY" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="txnDate" type="s:string" />
+    <wsdl:part name="valDate" type="s:string" />
+    <wsdl:part name="insDate" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remBranch" type="s:string" />
+    <wsdl:part name="instrType" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+    <wsdl:part name="envelop" type="s:string" />
+    <wsdl:part name="productCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionHttpGetIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionHttpGetIn">
+    <wsdl:part name="Branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="HV" type="s:string" />
+    <wsdl:part name="RemAccount" type="s:string" />
+    <wsdl:part name="BenefAccount" type="s:string" />
+    <wsdl:part name="CheckSlNo" type="s:string" />
+    <wsdl:part name="CCY" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TxnDate" type="s:string" />
+    <wsdl:part name="ValDate" type="s:string" />
+    <wsdl:part name="InstDate" type="s:string" />
+    <wsdl:part name="RoutingNo" type="s:string" />
+    <wsdl:part name="TxnBrn" type="s:string" />
+    <wsdl:part name="RemBranch" type="s:string" />
+    <wsdl:part name="InstType" type="s:string" />
+    <wsdl:part name="ReasonCode" type="s:string" />
+    <wsdl:part name="RejectReason" type="s:string" />
+    <wsdl:part name="Envelop" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionHttpGetIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableHttpPostIn">
+    <wsdl:part name="serviceName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsAddressAvaiableHttpPostOut">
+    <wsdl:part name="Body" element="tns:ConnectionResult" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionHttpPostIn">
+    <wsdl:part name="XREF" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSHttpPostIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+    <wsdl:part name="BranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoForCPSHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesHttpPostIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountSignatoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageHttpPostIn">
+    <wsdl:part name="imgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSigImageHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionHttpPostIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="HV" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="benefAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="CCY" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="txnDate" type="s:string" />
+    <wsdl:part name="valDate" type="s:string" />
+    <wsdl:part name="insDate" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remBranch" type="s:string" />
+    <wsdl:part name="instrType" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+    <wsdl:part name="envelop" type="s:string" />
+    <wsdl:part name="productCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InwardTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionHttpPostIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ORETransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionHttpPostIn">
+    <wsdl:part name="Branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="HV" type="s:string" />
+    <wsdl:part name="RemAccount" type="s:string" />
+    <wsdl:part name="BenefAccount" type="s:string" />
+    <wsdl:part name="CheckSlNo" type="s:string" />
+    <wsdl:part name="CCY" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="TxnDate" type="s:string" />
+    <wsdl:part name="ValDate" type="s:string" />
+    <wsdl:part name="InstDate" type="s:string" />
+    <wsdl:part name="RoutingNo" type="s:string" />
+    <wsdl:part name="TxnBrn" type="s:string" />
+    <wsdl:part name="RemBranch" type="s:string" />
+    <wsdl:part name="InstType" type="s:string" />
+    <wsdl:part name="ReasonCode" type="s:string" />
+    <wsdl:part name="RejectReason" type="s:string" />
+    <wsdl:part name="Envelop" type="s:string" />
+    <wsdl:part name="ProductCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OutwardTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionHttpPostIn">
+    <wsdl:part name="branch" type="s:string" />
+    <wsdl:part name="XREF" type="s:string" />
+    <wsdl:part name="txnBrn" type="s:string" />
+    <wsdl:part name="remAccount" type="s:string" />
+    <wsdl:part name="checkSlNo" type="s:string" />
+    <wsdl:part name="routingNo" type="s:string" />
+    <wsdl:part name="reasoncode" type="s:string" />
+    <wsdl:part name="rejectReason" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IRETransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="IsAddressAvaiable">
+      <wsdl:input message="tns:IsAddressAvaiableSoapIn" />
+      <wsdl:output message="tns:IsAddressAvaiableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <wsdl:input message="tns:QueryTransactionSoapIn" />
+      <wsdl:output message="tns:QueryTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <wsdl:input message="tns:GetAccountInfoForCPSSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoForCPSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <wsdl:input message="tns:GetAccountSignatoriesSoapIn" />
+      <wsdl:output message="tns:GetAccountSignatoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <wsdl:input message="tns:GetSigImageSoapIn" />
+      <wsdl:output message="tns:GetSigImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <wsdl:input message="tns:InwardTransactionSoapIn" />
+      <wsdl:output message="tns:InwardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <wsdl:input message="tns:ORETransactionSoapIn" />
+      <wsdl:output message="tns:ORETransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <wsdl:input message="tns:OutwardTransactionSoapIn" />
+      <wsdl:output message="tns:OutwardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <wsdl:input message="tns:IRETransactionSoapIn" />
+      <wsdl:output message="tns:IRETransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="IsAddressAvaiable">
+      <wsdl:input message="tns:IsAddressAvaiableHttpGetIn" />
+      <wsdl:output message="tns:IsAddressAvaiableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <wsdl:input message="tns:QueryTransactionHttpGetIn" />
+      <wsdl:output message="tns:QueryTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <wsdl:input message="tns:GetAccountInfoForCPSHttpGetIn" />
+      <wsdl:output message="tns:GetAccountInfoForCPSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <wsdl:input message="tns:GetAccountSignatoriesHttpGetIn" />
+      <wsdl:output message="tns:GetAccountSignatoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <wsdl:input message="tns:GetSigImageHttpGetIn" />
+      <wsdl:output message="tns:GetSigImageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <wsdl:input message="tns:InwardTransactionHttpGetIn" />
+      <wsdl:output message="tns:InwardTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <wsdl:input message="tns:ORETransactionHttpGetIn" />
+      <wsdl:output message="tns:ORETransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <wsdl:input message="tns:OutwardTransactionHttpGetIn" />
+      <wsdl:output message="tns:OutwardTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <wsdl:input message="tns:IRETransactionHttpGetIn" />
+      <wsdl:output message="tns:IRETransactionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="IsAddressAvaiable">
+      <wsdl:input message="tns:IsAddressAvaiableHttpPostIn" />
+      <wsdl:output message="tns:IsAddressAvaiableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <wsdl:input message="tns:QueryTransactionHttpPostIn" />
+      <wsdl:output message="tns:QueryTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input message="tns:GetAccountInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <wsdl:input message="tns:GetAccountInfoForCPSHttpPostIn" />
+      <wsdl:output message="tns:GetAccountInfoForCPSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <wsdl:input message="tns:GetAccountSignatoriesHttpPostIn" />
+      <wsdl:output message="tns:GetAccountSignatoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <wsdl:input message="tns:GetSigImageHttpPostIn" />
+      <wsdl:output message="tns:GetSigImageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <wsdl:input message="tns:InwardTransactionHttpPostIn" />
+      <wsdl:output message="tns:InwardTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <wsdl:input message="tns:ORETransactionHttpPostIn" />
+      <wsdl:output message="tns:ORETransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <wsdl:input message="tns:OutwardTransactionHttpPostIn" />
+      <wsdl:output message="tns:OutwardTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <wsdl:input message="tns:IRETransactionHttpPostIn" />
+      <wsdl:output message="tns:IRETransactionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <soap:operation soapAction="http://tempuri.org/IsAddressAvaiable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <soap:operation soapAction="http://tempuri.org/QueryTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfoForCPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <soap:operation soapAction="http://tempuri.org/GetAccountSignatories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <soap:operation soapAction="http://tempuri.org/GetSigImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <soap:operation soapAction="http://tempuri.org/InwardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <soap:operation soapAction="http://tempuri.org/ORETransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <soap:operation soapAction="http://tempuri.org/OutwardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <soap:operation soapAction="http://tempuri.org/IRETransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <soap12:operation soapAction="http://tempuri.org/IsAddressAvaiable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <soap12:operation soapAction="http://tempuri.org/QueryTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfoForCPS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountSignatories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <soap12:operation soapAction="http://tempuri.org/GetSigImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <soap12:operation soapAction="http://tempuri.org/InwardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <soap12:operation soapAction="http://tempuri.org/ORETransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <soap12:operation soapAction="http://tempuri.org/OutwardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <soap12:operation soapAction="http://tempuri.org/IRETransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <http:operation location="/IsAddressAvaiable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <http:operation location="/QueryTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <http:operation location="/GetAccountInfoForCPS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <http:operation location="/GetAccountSignatories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <http:operation location="/GetSigImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <http:operation location="/InwardTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <http:operation location="/ORETransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <http:operation location="/OutwardTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <http:operation location="/IRETransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="IsAddressAvaiable">
+      <http:operation location="/IsAddressAvaiable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryTransaction">
+      <http:operation location="/QueryTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoForCPS">
+      <http:operation location="/GetAccountInfoForCPS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSignatories">
+      <http:operation location="/GetAccountSignatories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSigImage">
+      <http:operation location="/GetSigImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InwardTransaction">
+      <http:operation location="/InwardTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORETransaction">
+      <http:operation location="/ORETransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OutwardTransaction">
+      <http:operation location="/OutwardTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IRETransaction">
+      <http:operation location="/IRETransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="http://localhost/FloraCPSWS/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

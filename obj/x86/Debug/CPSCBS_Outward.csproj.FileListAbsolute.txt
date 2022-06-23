@@ -1,0 +1,11 @@
+E:\UCBL\BACH-II\Project\MultitaskingWinService\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBS.ProjectInstaller.resources
+E:\UCBL\BACH-II\Project\MultitaskingWinService\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBS_Outward.csproj.GenerateResource.Cache
+E:\UCBL\BACH-II\Project\MultitaskingWinService\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBSOutward.exe
+E:\UCBL\BACH-II\Project\MultitaskingWinService\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBSOutward.pdb
+D:\FloraBP\CPSCBSOutward.exe.config
+D:\FloraBP\CPSCBSOutward.exe
+D:\FloraBP\CPSCBSOutward.pdb
+E:\211019\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBS.ProjectInstaller.resources
+E:\211019\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBS_Outward.csproj.GenerateResource.Cache
+E:\211019\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBSOutward.exe
+E:\211019\CPSCBS_Outward\CPSCBS\obj\x86\Debug\CPSCBSOutward.pdb

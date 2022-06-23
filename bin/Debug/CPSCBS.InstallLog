@@ -1,0 +1,10 @@
+﻿Installing assembly 'C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.InstallLog
+   assemblypath = C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.exe
+Rolling back assembly 'C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.InstallLog
+   assemblypath = C:\inetpub\wwwroot\CPSCBS\bin\Debug\CPSCBS.exe
